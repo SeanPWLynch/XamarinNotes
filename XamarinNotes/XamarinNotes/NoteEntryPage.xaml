@@ -5,11 +5,11 @@
              Title="Note Entry">
     <StackLayout Margin="20">
         <Entry Placeholder="Enter note title"
-                Text="{Binding title}"
+                Text="{Binding Title}"
                 HeightRequest="100" 
                FontSize="Title"/>
         <Editor Placeholder="Enter your note"
-                Text="{Binding text}"
+                Text="{Binding Text}"
                 HeightRequest="100" />
         <Grid>
             <Grid.ColumnDefinitions>

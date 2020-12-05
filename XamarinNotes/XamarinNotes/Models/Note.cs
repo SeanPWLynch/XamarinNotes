@@ -1,14 +1,17 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace XamarinNotes.Models
 {
-    class Note
+    public class Note
     {
-        public string fileName { get; set; }
-        public string title { get; set; }
-        public string text { get; set; }
-        public DateTime date { get; set; }
+        [PrimaryKey, AutoIncrement]
+        public int ID { get; set; }
+        public string FileName { get; set; }
+        public string Title { get; set; }
+        public string Text { get; set; }
+        public DateTime Date{ get; set; }
     }
 }
