@@ -3,11 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinNotes.NoteEntryPage"
              Title="Note Entry">
-    <StackLayout Margin="20">
-        <Entry Placeholder="Enter note title"
+    <ContentPage.Resources>
+        <!-- Implicit styles -->
+        <Style TargetType="{x:Type Editor}">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource AppBackgroundColor}" />
+        </Style>
+
+        <Style TargetType="Button"
+               ApplyToDerivedTypes="True"
+               CanCascade="True">
+            <Setter Property="FontSize" Value="Medium" />
+            <Setter Property="BackgroundColor" Value="Purple" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="5" />
+        </Style>
+    </ContentPage.Resources>
+
+    <StackLayout Margin="{StaticResource PageMargin}">
+        <Entry Placeholder="Note title"
                 Text="{Binding Title}"
-                HeightRequest="100" 
-               FontSize="Title"/>
+                FontSize="Title"
+                HeightRequest="100" />
         <Editor Placeholder="Enter your note"
                 Text="{Binding Text}"
                 HeightRequest="100" />
@@ -20,7 +37,8 @@
                     Clicked="OnSaveButtonClicked" />
             <Button Grid.Column="1"
                     Text="Delete"
-                    Clicked="OnDeleteButtonClicked"/>
+                    Clicked="OnDeleteButtonClicked" />
         </Grid>
     </StackLayout>
+
 </ContentPage>
